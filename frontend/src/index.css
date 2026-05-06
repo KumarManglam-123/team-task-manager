@@ -1,0 +1,77 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  body {
+    @apply bg-gray-950 text-gray-100 font-sans antialiased;
+    background-image: 
+      radial-gradient(ellipse at 20% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 50%),
+      radial-gradient(ellipse at 80% 100%, rgba(79, 70, 229, 0.1) 0%, transparent 50%);
+    min-height: 100vh;
+  }
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { @apply bg-gray-700 rounded-full; }
+  ::-webkit-scrollbar-thumb:hover { @apply bg-gray-600; }
+}
+
+@layer components {
+  .card {
+    @apply bg-gray-900 border border-gray-800 rounded-2xl;
+  }
+
+  .card-hover {
+    @apply card transition-all duration-200 hover:border-gray-700 hover:shadow-lg hover:shadow-black/20;
+  }
+
+  .btn-primary {
+    @apply bg-brand-500 hover:bg-brand-600 text-white font-semibold px-4 py-2 rounded-xl transition-all duration-150 active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-800 hover:bg-gray-700 text-gray-200 font-semibold px-4 py-2 rounded-xl transition-all duration-150 active:scale-95;
+  }
+
+  .btn-danger {
+    @apply bg-red-500/10 hover:bg-red-500/20 text-red-400 border border-red-500/20 hover:border-red-500/40 font-semibold px-4 py-2 rounded-xl transition-all duration-150;
+  }
+
+  .input {
+    @apply w-full bg-gray-800 border border-gray-700 focus:border-brand-500 text-gray-100 rounded-xl px-4 py-2.5 outline-none transition-all duration-150 placeholder:text-gray-500;
+  }
+
+  .label {
+    @apply block text-sm font-semibold text-gray-400 mb-1.5;
+  }
+
+  .badge-todo {
+    @apply bg-gray-700/60 text-gray-300 border border-gray-600/50;
+  }
+  .badge-inprogress {
+    @apply bg-blue-500/15 text-blue-400 border border-blue-500/20;
+  }
+  .badge-done {
+    @apply bg-emerald-500/15 text-emerald-400 border border-emerald-500/20;
+  }
+  .badge-low {
+    @apply bg-slate-500/15 text-slate-400 border border-slate-500/20;
+  }
+  .badge-medium {
+    @apply bg-amber-500/15 text-amber-400 border border-amber-500/20;
+  }
+  .badge-high {
+    @apply bg-orange-500/15 text-orange-400 border border-orange-500/20;
+  }
+  .badge-critical {
+    @apply bg-red-500/15 text-red-400 border border-red-500/20;
+  }
+}
